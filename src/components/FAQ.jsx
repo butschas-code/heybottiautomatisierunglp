@@ -4,32 +4,32 @@ import { useInView } from '../hooks/useInView'
 
 const FAQS = [
   {
-    q: 'Was genau kostet das Starter-Paket?',
-    a: 'Das Starter-Paket kostet €997 (zzgl. MwSt.). Das ist ein einmaliger Projektpreis — keine laufenden Lizenzkosten von uns. Dazu kommen ggf. Kosten für die von dir genutzten Tools (z.B. Make, n8n oder Zapier) — das besprechen wir vorab transparent.',
+    q: 'What exactly is a Digital Brand Personality?',
+    a: 'It is a branded AI-powered customer communication layer configured around your business identity, tone of voice, products, and target market. It is not a generic chatbot — it sounds and responds like your brand, handles customer inquiries intelligently, and generates business insights from every conversation.',
   },
   {
-    q: 'Wie lange dauert die Umsetzung?',
-    a: 'Typischerweise 4–8 Wochen von Analyse bis Go-Live. Phase 1 (Analyse): 1–2 Wochen. Phase 2 (Design): 1–2 Wochen. Phase 3 (Build & Test): 2–4 Wochen. Danach bist du live — mit 30 Tagen aktivem Support.',
+    q: 'How is this different from a standard chatbot?',
+    a: 'Standard chatbots are reactive — they wait, search, and answer. Your Digital Brand Personality is configured around your identity and connects customer dialogue with business learning. Every conversation reveals insights about what customers want, where they hesitate, and which products need better explanation.',
   },
   {
-    q: 'Muss ich meine bestehenden Tools wechseln?',
-    a: 'Nein! Wir automatisieren das, was du bereits nutzt. Ob HubSpot, Shopify, Gmail, Odoo oder ein anderes Tool — wir verbinden deine bestehenden Systeme. Du musst nichts neu einführen, wenn es nicht nötig ist.',
+    q: 'Which channels does it work on?',
+    a: 'Your Digital Brand Personality can be deployed on website chat, WhatsApp, email routing, and order request flows. You choose which channels make sense for your business during configuration.',
   },
   {
-    q: 'Was passiert, wenn nach dem Launch etwas schiefgeht?',
-    a: 'Für 30 Tage nach dem Launch sind wir aktiv für dich da — das ist im Paket inklusive. Wir überwachen die Automation, beheben Fehler und optimieren. Danach bieten wir optionale Support-Pakete für laufende Betreuung an.',
+    q: 'How long does configuration take?',
+    a: 'The core configuration — URL input, personality setup, product entry, and channel connection — can be completed in one session. More detailed customization of tone, dialect, market focus, and knowledge base takes a few days of iteration with the Heybotti team.',
   },
   {
-    q: 'Ist mein Unternehmen groß genug für Automation?',
-    a: 'Ja! Gerade kleinere Unternehmen profitieren überproportional von Automation, weil jede gesparte Stunde zählt. Wir arbeiten mit Unternehmen ab 5 Mitarbeiter. Entscheidend ist nicht die Größe, sondern ob repetitive Prozesse existieren — und die haben fast alle.',
+    q: 'What is the minimum to get started?',
+    a: 'You need at least three products or services entered, your brand information, and a connection channel (WhatsApp number or email). We can extract much of the initial context directly from your website URL.',
   },
   {
-    q: 'Für welche Branchen seid ihr tätig?',
-    a: 'Wir arbeiten branchenübergreifend: Healthcare, Gastronomie, Handwerk, Immobilien, Logistik, Retail, Wellness, Kanzleien, Baubranche, Agenturen, E-Commerce und mehr. Jede Branche hat eigene Workflows — wir kennen die spezifischen Herausforderungen.',
+    q: 'What is the SOFIA connection?',
+    a: 'SOFIA is the intelligent agentic operations layer at the center of Heybotti. Your Digital Brand Personality works as a focused, lightweight version of SOFIA — connected to the network so it learns faster over time. Technical integration can be supported through Horizen blockchain infrastructure.',
   },
   {
-    q: 'Was passiert im kostenlosen Erstgespräch?',
-    a: 'Im Erstgespräch (ca. 30–45 Min.) lernen wir dein Business kennen, verstehen deine Prozesse und zeigen dir konkret, wo Automation sofort helfen würde. Kein Sales-Pitch — nur echtes Interesse an deiner Situation. Danach bekommst du ein individuelles Angebot.',
+    q: 'What is a Custom LLM setup?',
+    a: 'For businesses that want more control, we can configure a dedicated AI environment with a custom model, brand-specific knowledge base, and secure data structure. This is recommended for businesses with specific compliance requirements or high interaction volumes. Infrastructure can be hosted via Contabo OpenClaw.',
   },
 ]
 
@@ -43,10 +43,10 @@ export default function FAQ() {
         <div ref={ref} className={`text-center mb-14 section-reveal ${inView ? 'visible' : ''}`}>
           <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-4">FAQ</p>
           <h2 className="font-display font-bold text-white mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-            Häufige Fragen
+            Common questions
           </h2>
           <p className="text-botti-muted text-lg">
-            Alles, was du wissen möchtest — bevor du anfragst.
+            Everything you need to know before you start.
           </p>
         </div>
 

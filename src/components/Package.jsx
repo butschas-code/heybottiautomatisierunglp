@@ -1,124 +1,137 @@
-import { Check, ArrowRight, Sparkles, Shield, Clock } from 'lucide-react'
+import { ArrowRight, MessageSquare, ShoppingCart, BarChart3 } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
 
-const INCLUDES = [
-  { icon: '🔍', title: 'Prozess-Analyse', desc: 'Wir analysieren deine aktuellen Workflows und identifizieren das größte Automatisierungspotenzial.' },
-  { icon: '⚙️', title: '1 Automation — komplett gebaut', desc: 'Wir bauen und testen eine vollständige Automatisierungslösung, genau auf dein Business zugeschnitten.' },
-  { icon: '🔗', title: 'Integration in deine Tools', desc: 'Die Automation wird nahtlos in deine bestehenden Systeme integriert — kein Tool-Wechsel nötig.' },
-  { icon: '🎓', title: 'Onboarding & Dokumentation', desc: 'Dein Team wird eingeführt und bekommt eine vollständige Dokumentation aller Workflows.' },
-  { icon: '🛡️', title: '30 Tage Support & Optimierung', desc: 'Nach dem Launch sind wir 30 Tage lang für Anpassungen, Fragen und Optimierungen da.' },
+const CORE_AREAS = [
+  {
+    icon: MessageSquare,
+    color: '#28E6B4',
+    title: 'Customer Communication',
+    desc: 'Answer customer questions, explain products, guide inquiries, qualify leads and support customers — all in your brand voice.',
+    items: ['FAQ automation', 'Lead qualification', 'Product explanations', 'Customer onboarding', 'Multi-language support'],
+  },
+  {
+    icon: ShoppingCart,
+    color: '#a78bfa',
+    title: 'Order Management',
+    desc: 'Collect order requests, structure customer information, forward inquiries and help your team stay organized.',
+    items: ['Structured order collection', 'WhatsApp order flows', 'Customer data capture', 'Team routing & summaries', 'Follow-up preparation'],
+  },
+  {
+    icon: BarChart3,
+    color: '#f472b6',
+    title: 'Business Intelligence',
+    desc: 'Analyze conversations, identify patterns, reveal customer needs and turn daily communication into useful strategic insight.',
+    items: ['Top customer questions', 'Demand signals', 'Sales objections', 'Market language analysis', 'Content & campaign ideas'],
+  },
 ]
 
-const BADGES = [
-  { icon: Clock, text: 'Live in 4–6 Wochen' },
-  { icon: Shield, text: 'DSGVO-konform' },
-  { icon: Sparkles, text: 'Keine laufenden Lizenzkosten' },
+const CONFIG_STEPS = [
+  { num: '01', title: 'Paste your URL or share input', desc: 'Enter your website URL, key information, or speak directly with SOFIA and the Heybotti team.' },
+  { num: '02', title: 'Create your virtual personality', desc: 'We configure tone, dialect, languages, focus market, customer type, and brand vocabulary.' },
+  { num: '03', title: 'Add your products or services', desc: 'Enter at least three products or services so your personality can explain, compare, and recommend.' },
+  { num: '04', title: 'Connect and go live', desc: 'Add your WhatsApp number or email and launch your Digital Brand Personality.' },
 ]
 
 export default function Package() {
   const [ref, inView] = useInView()
+  const [stepsRef, stepsInView] = useInView()
 
   return (
-    <section id="package" className="py-24 sm:py-32 bg-botti-card/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div ref={ref} className={`text-center mb-14 section-reveal ${inView ? 'visible' : ''}`}>
-          <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-4">Das Angebot</p>
-          <h2 className="font-display font-bold text-white mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-            Ein klares Paket.
-            <br />
-            <span className="gradient-text">Kein versteckter Aufwand.</span>
-          </h2>
-          <p className="text-botti-muted text-lg max-w-2xl mx-auto">
-            Wir nehmen uns die Zeit, dein Business zu verstehen — und liefern dann eine
-            Automatisierung, die wirklich funktioniert.
-          </p>
-        </div>
+    <>
+      {/* The Offer */}
+      <section id="offer" className="py-24 sm:py-32 bg-botti-card/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={ref} className={`text-center mb-14 section-reveal ${inView ? 'visible' : ''}`}>
+            <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-4">The Offer</p>
+            <h2 className="font-display font-bold text-white mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
+              Your Digital Brand Personality.
+              <br />
+              <span className="gradient-text">Not a generic bot.</span>
+            </h2>
+            <p className="text-botti-muted text-lg max-w-2xl mx-auto">
+              Configured around your identity, your offer and your way of speaking —
+              designed around three core areas.
+            </p>
+          </div>
 
-        <div className="grid lg:grid-cols-5 gap-8 items-start">
-          {/* Includes list */}
-          <div className={`lg:col-span-3 space-y-4 section-reveal ${inView ? 'visible' : ''}`} style={{ transitionDelay: '150ms' }}>
-            {INCLUDES.map((item, i) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {CORE_AREAS.map((area, i) => {
+              const Icon = area.icon
+              return (
+                <div
+                  key={area.title}
+                  className={`section-reveal ${inView ? 'visible' : ''} gradient-border`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  <div className="p-7 h-full flex flex-col">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                      style={{ backgroundColor: `${area.color}15`, border: `1px solid ${area.color}25` }}
+                    >
+                      <Icon size={22} style={{ color: area.color }} />
+                    </div>
+                    <h3 className="font-display font-bold text-white text-xl mb-3">{area.title}</h3>
+                    <p className="text-botti-muted text-sm leading-relaxed mb-5 flex-1">{area.desc}</p>
+                    <ul className="space-y-2">
+                      {area.items.map(item => (
+                        <li key={item} className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: area.color }} />
+                          <span className="text-sm text-white/70">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          <div className={`text-center mt-12 section-reveal ${inView ? 'visible' : ''}`} style={{ transitionDelay: '400ms' }}>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-black bg-botti-teal hover:bg-botti-teal-dark transition-all duration-200 teal-glow group"
+            >
+              Start Configuration
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works */}
+      <section id="how-it-works" ref={stepsRef} className="py-24 sm:py-32 bg-botti-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 section-reveal ${stepsInView ? 'visible' : ''}`}>
+            <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-4">Simple setup. Serious intelligence.</p>
+            <h2 className="font-display font-bold text-white mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
+              From URL to intelligent
+              <br />
+              <span className="gradient-text">customer communication</span>
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {CONFIG_STEPS.map((step, i) => (
               <div
-                key={item.title}
-                className="flex gap-5 p-5 rounded-xl border border-botti-border bg-botti-card hover:border-botti-teal/20 transition-all duration-300 group"
-                style={{ transitionDelay: `${i * 80}ms` }}
+                key={step.num}
+                className={`section-reveal ${stepsInView ? 'visible' : ''} relative`}
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="text-2xl flex-shrink-0 w-10 h-10 flex items-center justify-center">{item.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-white mb-1 group-hover:text-botti-teal transition-colors">{item.title}</h3>
-                  <p className="text-botti-muted text-sm leading-relaxed">{item.desc}</p>
+                {i < CONFIG_STEPS.length - 1 && (
+                  <div className="hidden lg:block step-connector" style={{ background: 'linear-gradient(90deg, rgba(40,230,180,0.4), transparent)' }} />
+                )}
+                <div className="gradient-border h-full">
+                  <div className="p-6 h-full flex flex-col">
+                    <span className="font-display font-black text-4xl leading-none opacity-20 text-botti-teal mb-5">{step.num}</span>
+                    <h3 className="font-display font-bold text-white text-lg mb-3 leading-tight">{step.title}</h3>
+                    <p className="text-botti-muted text-sm leading-relaxed flex-1">{step.desc}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Pricing card */}
-          <div
-            className={`lg:col-span-2 section-reveal ${inView ? 'visible' : ''}`}
-            style={{ transitionDelay: '300ms' }}
-          >
-            <div className="rounded-2xl border border-botti-teal/30 bg-gradient-to-br from-botti-card to-botti-card2 p-8 sticky top-24 teal-glow relative overflow-hidden">
-              {/* Background decoration */}
-              <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-botti-teal/5 blur-2xl pointer-events-none" />
-              <div className="absolute -bottom-12 -left-12 w-32 h-32 rounded-full bg-botti-teal/5 blur-2xl pointer-events-none" />
-
-              <div className="relative">
-                {/* Popular badge */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-botti-teal/15 border border-botti-teal/30 text-botti-teal text-xs font-semibold mb-6">
-                  <Sparkles size={12} />
-                  Meistgewählt
-                </div>
-
-                <div className="mb-2">
-                  <p className="text-botti-muted text-sm font-medium uppercase tracking-wider">Starter-Paket</p>
-                </div>
-
-                <div className="flex items-end gap-2 mb-2">
-                  <span className="font-display font-bold text-white" style={{ fontSize: 'clamp(3rem, 7vw, 4.5rem)', lineHeight: 1 }}>
-                    €997
-                  </span>
-                </div>
-                <p className="text-botti-subtle text-sm mb-8">
-                  Einmaliger Projektpreis · Preise zzgl. MwSt.
-                </p>
-
-                {/* Quick includes */}
-                <ul className="space-y-3 mb-8">
-                  {INCLUDES.map(item => (
-                    <li key={item.title} className="flex items-center gap-3">
-                      <Check size={15} className="text-botti-teal flex-shrink-0" />
-                      <span className="text-sm text-white/80">{item.title}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Badges */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {BADGES.map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-botti-bg/60 border border-botti-border text-botti-muted text-xs">
-                      <Icon size={12} className="text-botti-teal" />
-                      {text}
-                    </div>
-                  ))}
-                </div>
-
-                <a
-                  href="#contact"
-                  className="relative w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-bold text-black bg-botti-teal hover:bg-botti-teal-dark transition-all duration-200 group pulse-ring"
-                >
-                  Jetzt Paket anfragen
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                </a>
-
-                <p className="text-center text-botti-subtle text-xs mt-4">
-                  Kostenlose Erstberatung · Kein Risiko
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

@@ -1,127 +1,127 @@
-import { Search, Lightbulb, Wrench, Rocket } from 'lucide-react'
+import { Link, Cpu, Zap, Globe } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
 
-const STEPS = [
-  {
-    icon: Search,
-    number: '01',
-    title: 'Analyse',
-    subtitle: '1–2 Wochen',
-    desc: 'Wir analysieren deine aktuellen Workflows, Tools und Engpässe — und identifizieren wo Automation den größten Hebel hat.',
-    deliverables: ['Prozess-Übersicht & Tool-Mapping', 'Automation-Impact-Assessment', 'Priorisierte Handlungsempfehlung'],
-    color: '#22d3ee',
-  },
-  {
-    icon: Lightbulb,
-    number: '02',
-    title: 'Design',
-    subtitle: '1–2 Wochen',
-    desc: 'Wir entwerfen klare Automatisierungspläne, maßgeschneidert auf dein Business und deine Systeme.',
-    deliverables: ['Automation-Blueprint', 'Systemintegrationsplan', 'Genehmigter Zeitplan'],
-    color: '#a78bfa',
-  },
-  {
-    icon: Wrench,
-    number: '03',
-    title: 'Build & Integrate',
-    subtitle: '2–4 Wochen',
-    desc: 'Wir bauen, verbinden und testen deine automatisierten Workflows — schnell, zuverlässig und ohne Unterbrechung deines Betriebs.',
-    deliverables: ['Vollständiges Automatisierungssystem', 'Umfassendes Team-Training', 'Vollständige Dokumentation'],
-    color: '#28E6B4',
-  },
-  {
-    icon: Rocket,
-    number: '04',
-    title: 'Launch & Optimize',
-    subtitle: '+ 30 Tage Support',
-    desc: 'Go-Live! Wir sind 30 Tage nach dem Launch für Anpassungen, Optimierungen und Fragen da.',
-    deliverables: ['Go-Live & Monitoring', '30 Tage aktiver Support', 'Regelmäßige Optimierungsberichte'],
-    color: '#fb923c',
-  },
+const SOFIA_FEATURES = [
+  { title: 'Connected to SOFIA', desc: 'Each customer server can be connected to SOFIA and the Heybotti team so the network learns faster, improves faster and becomes more useful over time.' },
+  { title: 'Horizen Blockchain', desc: 'Technical connection supported through Horizen blockchain infrastructure for secure, connected learning and future scalability.' },
+  { title: 'Network Learning', desc: 'Your Digital Brand Personality benefits from shared network intelligence — every deployment strengthens the whole.' },
+]
+
+const LLM_INCLUDES = [
+  'Dedicated server setup',
+  'Custom model configuration',
+  'Brand-specific knowledge base',
+  'Secure data structure',
+  'Role-based AI behavior',
+  'Website or WhatsApp integration',
+  'Business-specific prompt architecture',
+  'Ongoing optimization',
 ]
 
 export default function Process() {
   const [ref, inView] = useInView()
+  const [llmRef, llmInView] = useInView()
 
   return (
-    <section id="process" className="py-24 sm:py-32 bg-botti-card/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className={`text-center mb-16 section-reveal ${inView ? 'visible' : ''}`}>
-          <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-4">So arbeiten wir</p>
-          <h2 className="font-display font-bold text-white mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-            Von der ersten Idee bis zum
-            <br />
-            <span className="gradient-text">laufenden System</span>
-          </h2>
-          <p className="text-botti-muted text-lg max-w-2xl mx-auto">
-            Unser strukturierter Prozess sorgt dafür, dass dein Business während der
-            Implementierung weiterläuft — und danach deutlich besser.
-          </p>
-          <div className="inline-flex items-center gap-2 mt-6 px-4 py-2 rounded-full border border-botti-teal/30 bg-botti-teal-dim text-botti-teal text-sm">
-            ⏱️ Typische Gesamtdauer: 4–8 Wochen
+    <>
+      {/* SOFIA Connection */}
+      <section id="sofia" className="py-24 sm:py-32 bg-botti-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={ref} className={`text-center mb-16 section-reveal ${inView ? 'visible' : ''}`}>
+            <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-4">The SOFIA Connection</p>
+            <h2 className="font-display font-bold text-white mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
+              A light version of SOFIA
+              <br />
+              <span className="gradient-text">for your business</span>
+            </h2>
+            <p className="text-botti-muted text-lg max-w-2xl mx-auto">
+              At the center of Heybotti is SOFIA — our intelligent agentic operations layer.
+              Your Digital Brand Personality works like a focused, lightweight version of SOFIA,
+              built for customer communication, order management and insight generation.
+            </p>
           </div>
-        </div>
 
-        {/* Steps */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {STEPS.map((step, i) => {
-            const Icon = step.icon
-            return (
-              <div
-                key={step.title}
-                className={`section-reveal ${inView ? 'visible' : ''} relative`}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                {/* Connector line (desktop) */}
-                {i < STEPS.length - 1 && (
-                  <div
-                    className="hidden lg:block step-connector"
-                    style={{ background: `linear-gradient(90deg, ${step.color}60, transparent)` }}
-                  />
-                )}
-
-                <div className="gradient-border h-full">
-                  <div className="p-6 h-full flex flex-col">
-                    {/* Number + icon */}
-                    <div className="flex items-center justify-between mb-6">
-                      <span
-                        className="font-display font-black text-4xl leading-none opacity-20"
-                        style={{ color: step.color }}
-                      >
-                        {step.number}
-                      </span>
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center"
-                        style={{ backgroundColor: `${step.color}15`, border: `1px solid ${step.color}30` }}
-                      >
-                        <Icon size={20} style={{ color: step.color }} />
-                      </div>
+          <div className="grid lg:grid-cols-3 gap-6 mb-14">
+            {SOFIA_FEATURES.map((feat, i) => {
+              const icons = [Link, Cpu, Globe]
+              const colors = ['#28E6B4', '#a78bfa', '#22d3ee']
+              const Icon = icons[i]
+              return (
+                <div
+                  key={feat.title}
+                  className={`section-reveal ${inView ? 'visible' : ''} gradient-border`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  <div className="p-7 h-full flex flex-col">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                      style={{ backgroundColor: `${colors[i]}15`, border: `1px solid ${colors[i]}25` }}
+                    >
+                      <Icon size={20} style={{ color: colors[i] }} />
                     </div>
-
-                    <h3 className="font-display font-bold text-white text-xl mb-1">{step.title}</h3>
-                    <p className="text-xs font-medium mb-3 px-2 py-1 rounded-md self-start" style={{ backgroundColor: `${step.color}15`, color: step.color }}>
-                      {step.subtitle}
-                    </p>
-                    <p className="text-botti-muted text-sm leading-relaxed mb-5 flex-1">{step.desc}</p>
-
-                    <div className="border-t border-botti-border pt-4">
-                      <p className="text-xs font-semibold text-botti-subtle uppercase tracking-wider mb-3">Ergebnis</p>
-                      <ul className="space-y-2">
-                        {step.deliverables.map(d => (
-                          <li key={d} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: step.color }} />
-                            <span className="text-xs text-white/65">{d}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <h3 className="font-semibold text-white text-lg mb-3">{feat.title}</h3>
+                    <p className="text-botti-muted text-sm leading-relaxed flex-1">{feat.desc}</p>
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
+
+          {/* Sofia visual */}
+          <div className={`rounded-2xl border border-botti-teal/20 bg-botti-teal-dim p-8 sm:p-10 text-center section-reveal ${inView ? 'visible' : ''}`} style={{ transitionDelay: '400ms' }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-botti-teal/40 bg-botti-teal/10 text-botti-teal text-sm font-semibold mb-6">
+              <span className="w-2 h-2 rounded-full bg-botti-teal animate-pulse-slow" />
+              SOFIA Network — Active
+            </div>
+            <p className="text-lg text-white font-light leading-relaxed max-w-2xl mx-auto">
+              Each Digital Brand Personality is a node in the SOFIA network — a focused AI with its own branded identity, connected to a system that learns continuously from every interaction.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Custom LLM */}
+      <section id="custom-llm" ref={llmRef} className="py-24 sm:py-32 bg-botti-card/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className={`section-reveal ${llmInView ? 'visible' : ''}`}>
+              <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-4">Custom LLM Setup</p>
+              <h2 className="font-display font-bold text-white mb-6" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>
+                Your own
+                <br />
+                <span className="gradient-text">AI environment</span>
+              </h2>
+              <p className="text-botti-muted text-lg leading-relaxed mb-8">
+                For businesses that want more control, we can set up a customized LLM environment — dedicated, secure, and built around your specific requirements.
+              </p>
+              <p className="text-botti-subtle text-sm mb-8">
+                Suggested infrastructure option: Contabo OpenClaw hosting for custom LLM deployment.
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-black bg-botti-teal hover:bg-botti-teal-dark transition-all duration-200 teal-glow group"
+              >
+                <Zap size={18} />
+                Discuss Custom LLM Setup
+              </a>
+            </div>
+
+            <div className={`section-reveal ${llmInView ? 'visible' : ''} gradient-border`} style={{ transitionDelay: '200ms' }}>
+              <div className="p-8">
+                <p className="text-botti-teal text-sm font-semibold uppercase tracking-widest mb-5">This can include:</p>
+                <ul className="space-y-3">
+                  {LLM_INCLUDES.map(item => (
+                    <li key={item} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-botti-teal flex-shrink-0" />
+                      <span className="text-white/80 text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

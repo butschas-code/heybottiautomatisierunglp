@@ -14,11 +14,11 @@ export default function Nav() {
   }, [])
 
   const links = [
-    { label: 'Services', href: '#services' },
-    { label: 'Branchen', href: '#industries' },
-    { label: 'Ergebnisse', href: '#results' },
-    { label: 'Preise', href: '#package' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'The Offer', href: '#offer' },
+    { label: 'Capabilities', href: '#capabilities' },
+    { label: 'Use Cases', href: '#use-cases' },
+    { label: 'SOFIA', href: '#sofia' },
+    { label: 'Sessions', href: '#sessions' },
   ]
 
   return (
@@ -57,7 +57,7 @@ export default function Nav() {
             href="#contact"
             className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-black bg-botti-teal hover:bg-botti-teal-dark transition-all duration-200 teal-glow-sm"
           >
-            Paket anfragen
+            Start Now
           </a>
         </div>
 
@@ -65,7 +65,7 @@ export default function Nav() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2 text-botti-muted hover:text-white"
-          aria-label="Menü"
+          aria-label="Menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -93,7 +93,7 @@ export default function Nav() {
             onClick={() => setMobileOpen(false)}
             className="mt-2 text-center px-5 py-3 rounded-lg text-sm font-bold text-black bg-botti-teal"
           >
-            Paket anfragen
+            Start Now
           </a>
         </div>
       </div>

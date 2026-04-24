@@ -7,6 +7,7 @@ import Services from './components/Services'
 import Industries from './components/Industries'
 import Results from './components/Results'
 import Process from './components/Process'
+import Upsell from './components/Upsell'
 import FAQ from './components/FAQ'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
@@ -23,6 +24,7 @@ export default function App() {
       <Industries />
       <Results />
       <Process />
+      <Upsell />
       <FAQ />
       <ContactForm />
       <Footer />

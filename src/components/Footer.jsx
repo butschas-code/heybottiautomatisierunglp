@@ -11,7 +11,7 @@ export default function Footer() {
             <span className="font-display font-bold text-white">
               hey<span className="gradient-text">botti</span>
             </span>
-            <span className="text-botti-subtle text-sm">— Automation für dein Business</span>
+            <span className="text-botti-subtle text-sm">— Digital Brand Personality</span>
           </div>
 
           {/* Links */}
@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
 
           <p className="text-botti-subtle text-xs">
-            © {new Date().getFullYear()} heybotti. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} heybotti. All rights reserved.
           </p>
         </div>
       </div>
